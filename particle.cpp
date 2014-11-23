@@ -1,15 +1,12 @@
 #include "vector3.h"
 #include "particle.h"
 
-void Particle::addForce(const Vector3& f)
-{
+void Particle::addForce(const Vector3& f) {
 	acceleration += f / mass;
 }
 
-void Particle::timeStep()
-{
-	if(movable)
-	{
+void Particle::timeStep(){
+	if(movable) {
 		Vector3 temp = pos;
 		pos = pos + (pos-old_pos)*(1.0f - DAMPING) + acceleration * TIME_STEPSIZE2 * .5f;
 		old_pos = temp;

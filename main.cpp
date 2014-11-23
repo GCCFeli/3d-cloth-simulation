@@ -16,8 +16,7 @@ Cloth  cloth(15,15,55,55);
 Sphere sphere(Vector3(7,-5,0), 3); 
 Plane  plane(Vector3(0,1,0), -8);
 
-void init(GLvoid)
-{
+void init(GLvoid) {
 	glShadeModel(GL_SMOOTH);
 	glClearColor(0.2f, 0.2f, 0.4f, 0.5f);				
 	glClearDepth(1.0f);
@@ -31,8 +30,7 @@ void init(GLvoid)
 }
 
 
-void display(void)
-{
+void display(void) {
 	cloth.addForce(Vector3(0,-0.1,0)); 
 	cloth.timeStep(); 
 	cloth.ballCollision(sphere); 
@@ -65,8 +63,7 @@ void display(void)
 	glutPostRedisplay();
 }
 
-void reshape(int w, int h)  
-{
+void reshape(int w, int h) {
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity();  
@@ -75,12 +72,10 @@ void reshape(int w, int h)
 	glLoadIdentity(); 
 }
 
-void mouse(int button, int state, int x, int y) 
-{
+void mouse(int button, int state, int x, int y) {
 }
 
-void keyboard( unsigned char key, int x, int y ) 
-{
+void keyboard( unsigned char key, int x, int y ) {
 	switch ( key ) {
 	case 27:    
 		exit ( 0 );
@@ -114,26 +109,24 @@ void keyboard( unsigned char key, int x, int y )
 	}
 }
 
-void arrow_keys( int a_keys, int x, int y ) 
-{
+void arrow_keys( int a_keys, int x, int y ) {
 	switch(a_keys) {
 	case GLUT_KEY_UP:
 		glutFullScreen();
 		break;
 	case GLUT_KEY_DOWN: 
-		glutReshapeWindow (720, 512 );
+		glutReshapeWindow(800, 600);
 		break;
 	default:
 		break;
 	}
 }
 
-int main ( int argc, char** argv ) 
-{
+int main ( int argc, char** argv ) {
 	glutInit( &argc, argv );
 
 	glutInitDisplayMode( GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH ); 
-	glutInitWindowSize(720, 512 ); 
+	glutInitWindowSize(800, 600);
 
 	glutCreateWindow( "Cloth Simulation W S Q E A D" );
 	init();

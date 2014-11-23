@@ -4,8 +4,7 @@
 #include "particle.h"
 #include "vector3.h"
 
-class Constraint
-{
+class Constraint {
 private:
 	float rest_distance; 
 

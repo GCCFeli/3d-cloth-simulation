@@ -33,8 +33,7 @@ public:
 	}
 };
 
-class Cloth
-{
+class Cloth {
 private:
 
 	typedef std::vector<Particle>::iterator parts;

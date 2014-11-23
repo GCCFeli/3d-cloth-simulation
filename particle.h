@@ -6,8 +6,7 @@
 #define DAMPING 0.02f
 #define TIME_STEPSIZE2 0.5f*0.5f
 
-class Particle
-{
+class Particle {
 private:
 	bool movable; 
 
